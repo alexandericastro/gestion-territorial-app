@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Súper App · Club Juan Montalvo</title>
+    <title>TerritoryOps · Sistema de Gestión Territorial (600+ Familias)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
@@ -895,8 +895,8 @@
     <header id="mainHeader" style="display:flex; align-items:center; padding:12px 16px; background:white; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1001; min-height:64px;">
         <button id="backBtn" style="background:none; border:none; font-size:20px; color:var(--text); cursor:pointer; width:40px; text-align:left; display:none;">←</button>
         <div style="flex:1; text-align:center;">
-            <div id="hTitle" style="font-weight:900; font-size:15px; letter-spacing:-0.5px; color:var(--text);">Club Juan Montalvo</div>
-            <div id="hSub" style="font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Children International</div>
+            <div id="hTitle" style="font-weight:900; font-size:15px; letter-spacing:-0.5px; color:var(--text);">TerritoryOps</div>
+            <div id="hSub" style="font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Operaciones Territoriales & MEAL</div>
         </div>
         <div id="headerActions" style="width:40px; display:flex; justify-content:flex-end; align-items:center;">
             <div id="syncDot" class="sync-dot" style="display:none;"></div>
@@ -920,7 +920,7 @@
         <!-- ── PORTAL DE ENTRADA ── -->
         <div class="view active v-centered-view" id="v-portal" style="padding: 40px 10px;">
             <div style="text-align:center; margin-bottom:48px;">
-                <h1 style="font-size:32px; font-weight:900; color:var(--text); letter-spacing:-1px; margin-bottom:8px;">Club Juan Montalvo</h1>
+                <h1 style="font-size:32px; font-weight:900; color:var(--text); letter-spacing:-1px; margin-bottom:8px;">TerritoryOps</h1>
                 <p style="font-size:15px; color:var(--text-muted); font-weight:700;">Selecciona tu perfil de acceso</p>
             </div>
             
@@ -1037,7 +1037,7 @@
                             <div style="font-size:24px;">📍</div>
                             <div style="flex:1;">
                                 <div style="font-size:11px; font-weight:800; color:var(--text-muted);">LUGAR</div>
-                                <div style="font-size:15px; font-weight:800;" id="famInfoPlace">Children CCJ</div>
+                                <div style="font-size:15px; font-weight:800;" id="famInfoPlace">Sede Territorial Central</div>
                             </div>
                         </div>
                     </div>
@@ -1170,7 +1170,6 @@
                         convocatorias activas para esta semana.</p>
                 </div>
             </div>
-
             <!-- FAM-CONTACT-FORM -->
             <div class="view" id="v-fam-cont-form">
                 <div class="card">
@@ -1571,7 +1570,7 @@
             <div style="display:grid; gap:16px;">
                 <div class="att-choice-card primary" onclick="vibe('STRONG'); setTimeout(volProceedOfficial, 80)">
                     <div style="font-weight:900; font-size:14px; text-transform:uppercase; letter-spacing:1px; opacity:0.8; margin-bottom:8px;">Protocolo</div>
-                    <div style="font-weight:900; font-size:18px;">Sistema Oficial de Children</div>
+                    <div style="font-weight:900; font-size:18px;">Sistema de Enrutamiento Comunitario</div>
                     <p style="font-size:12px; font-weight:700; color:var(--text-muted);">Usa esta vía si tienes el acceso externo. No requiere marcar nombres en esta app.</p>
                 </div>
 
@@ -1747,7 +1746,7 @@
 
         // ████████████████████████████████████████████████
         // LINKS DE GRUPOS DE WHATSAPP (edita estos links con los reales)
-        // Formato: 'NOMBRE_GRUPO': 'https://chat.whatsapp.com/XXXXXX'
+        // Formato: 'NOMBRE_GRUPO': 'https://wa.me/?text=Hola%20TerritoryOps%20Comunitaria'
         var WHATSAPP_GRUPOS = {};
         // ████████████████████████████████████████████████
 
@@ -1761,9 +1760,9 @@
             if (v) v.classList.add('active');
 
             var hT = document.getElementById('hTitle');
-            if (hT) hT.textContent = title || "Club Juan Montalvo";
+            if (hT) hT.textContent = title || "TerritoryOps";
             var hS = document.getElementById('hSub');
-            if (hS) hS.textContent = sub || "Children International";
+            if (hS) hS.textContent = sub || "Operaciones Territoriales & MEAL";
 
             const btn = document.getElementById('backBtn');
             const isVolDash = (id === 'v-vol-dash');
@@ -1837,7 +1836,21 @@
             }
         }
 
-        function syncDB(cb_opt) {
+        
+        const MOCK_LOCAL_DB = {"ok": true, "pps_config": {"SEC_01": "Sector 01 - Centro Histórico", "SEC_02": "Sector 02 - La Esperanza", "SEC_03": "Sector 03 - Las Lomas Altas", "SEC_04": "Sector 04 - El Mirador", "SEC_05": "Sector 05 - Bellavista", "SEC_06": "Sector 06 - San Antonio", "SEC_07": "Sector 07 - La Florida", "SEC_08": "Sector 08 - Los Pinos", "SEC_09": "Sector 09 - Santa Rosa", "SEC_10": "Sector 10 - San Carlos", "SEC_11": "Sector 11 - Vista Hermosa", "SEC_12": "Sector 12 - Nueva Aurora", "SEC_13": "Sector 13 - El Progreso", "SEC_14": "Sector 14 - Jardines del Sur", "SEC_15": "Sector 15 - San Francisco", "SEC_16": "Sector 16 - Solanda Norte", "SEC_17": "Sector 17 - Balcón del Valle", "CENTRAL": "Sede Territorial Central", "LINK_OFICIAL": "#"}, "grupos": [{"g": "G01", "nombre": "Grupo 01 — Sector 01 - Centro Histórico", "dia": "Sábado 08:30 - 11:00", "lugar": "Casa Comunal / Sede Centro Histórico", "voluntario": "Valeria Gómez", "activo": true}, {"g": "G02", "nombre": "Grupo 02 — Sector 02 - La Esperanza", "dia": "Sábado 11:30 - 14:00", "lugar": "Casa Comunal / Sede La Esperanza", "voluntario": "Carlos Mendoza", "activo": true}, {"g": "G03", "nombre": "Grupo 03 — Sector 03 - Las Lomas Altas", "dia": "Sábado 14:30 - 17:00", "lugar": "Casa Comunal / Sede Las Lomas Altas", "voluntario": "Elena Morales", "activo": true}, {"g": "G04", "nombre": "Grupo 04 — Sector 04 - El Mirador", "dia": "Domingo 08:30 - 11:00", "lugar": "Casa Comunal / Sede El Mirador", "voluntario": "David Salazar", "activo": true}, {"g": "G05", "nombre": "Grupo 05 — Sector 05 - Bellavista", "dia": "Domingo 11:30 - 14:00", "lugar": "Casa Comunal / Sede Bellavista", "voluntario": "Camila Benítez", "activo": true}, {"g": "G06", "nombre": "Grupo 06 — Sector 06 - San Antonio", "dia": "Sábado 08:30 - 11:00", "lugar": "Casa Comunal / Sede San Antonio", "voluntario": "Valeria Gómez", "activo": true}, {"g": "G07", "nombre": "Grupo 07 — Sector 07 - La Florida", "dia": "Sábado 11:30 - 14:00", "lugar": "Casa Comunal / Sede La Florida", "voluntario": "Carlos Mendoza", "activo": true}, {"g": "G08", "nombre": "Grupo 08 — Sector 08 - Los Pinos", "dia": "Sábado 14:30 - 17:00", "lugar": "Casa Comunal / Sede Los Pinos", "voluntario": "Elena Morales", "activo": true}, {"g": "G09", "nombre": "Grupo 09 — Sector 09 - Santa Rosa", "dia": "Domingo 08:30 - 11:00", "lugar": "Casa Comunal / Sede Santa Rosa", "voluntario": "David Salazar", "activo": true}, {"g": "G10", "nombre": "Grupo 10 — Sector 10 - San Carlos", "dia": "Domingo 11:30 - 14:00", "lugar": "Casa Comunal / Sede San Carlos", "voluntario": "Camila Benítez", "activo": true}, {"g": "G11", "nombre": "Grupo 11 — Sector 11 - Vista Hermosa", "dia": "Sábado 08:30 - 11:00", "lugar": "Casa Comunal / Sede Vista Hermosa", "voluntario": "Valeria Gómez", "activo": true}, {"g": "G12", "nombre": "Grupo 12 — Sector 12 - Nueva Aurora", "dia": "Sábado 11:30 - 14:00", "lugar": "Casa Comunal / Sede Nueva Aurora", "voluntario": "Carlos Mendoza", "activo": true}, {"g": "G13", "nombre": "Grupo 13 — Sector 13 - El Progreso", "dia": "Sábado 14:30 - 17:00", "lugar": "Casa Comunal / Sede El Progreso", "voluntario": "Elena Morales", "activo": true}, {"g": "G14", "nombre": "Grupo 14 — Sector 14 - Jardines del Sur", "dia": "Domingo 08:30 - 11:00", "lugar": "Casa Comunal / Sede Jardines del Sur", "voluntario": "David Salazar", "activo": true}, {"g": "G15", "nombre": "Grupo 15 — Sector 15 - San Francisco", "dia": "Domingo 11:30 - 14:00", "lugar": "Casa Comunal / Sede San Francisco", "voluntario": "Camila Benítez", "activo": true}, {"g": "G16", "nombre": "Grupo 16 — Sector 16 - Solanda Norte", "dia": "Sábado 08:30 - 11:00", "lugar": "Casa Comunal / Sede Solanda Norte", "voluntario": "Valeria Gómez", "activo": true}, {"g": "G17", "nombre": "Grupo 17 — Sector 17 - Balcón del Valle", "dia": "Sábado 11:30 - 14:00", "lugar": "Casa Comunal / Sede Balcón del Valle", "voluntario": "Carlos Mendoza", "activo": true}], "voluntarios": [{"p_id": "VOL-101", "nombre": "Valeria Gómez", "cedula": "1712345678", "cumpleanos": "1996-05-12", "rol": "Coordinadora de Campo (MEAL)", "pps": "Sede Territorial Central", "grupos": ["G01", "G02", "G03"], "foto": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150"}, {"p_id": "VOL-102", "nombre": "Carlos Mendoza", "cedula": "1723456789", "cumpleanos": "1998-09-20", "rol": "Líder de Voluntarios", "pps": "Sector 02 - La Esperanza", "grupos": ["G04", "G05", "G06"], "foto": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"}, {"p_id": "VOL-103", "nombre": "Elena Morales", "cedula": "1734567890", "cumpleanos": "2000-01-15", "rol": "Monitora de Indicadores", "pps": "Sector 03 - Las Lomas Altas", "grupos": ["G07", "G08", "G09"], "foto": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150"}, {"p_id": "VOL-104", "nombre": "David Salazar", "cedula": "1745678901", "cumpleanos": "1997-11-04", "rol": "Facilitador Comunitario", "pps": "Sector 08 - Los Pinos", "grupos": ["G10", "G11", "G12"], "foto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"}, {"p_id": "VOL-105", "nombre": "Camila Benítez", "cedula": "1756789012", "cumpleanos": "1999-07-28", "rol": "Enlace Territorial", "pps": "Sector 14 - Jardines del Sur", "grupos": ["G13", "G14", "G15", "G16", "G17"], "foto": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150"}], "participantes": [{"id": "P-001", "f": "FAM-101", "n": "Mateo Pérez Castro", "s": "Sector 01 - Centro Histórico", "g": "G01", "e": 7, "t": "0991000000", "asistentes": 1}, {"id": "P-002", "f": "FAM-101", "n": "Lucía Pérez Castro", "s": "Sector 01 - Centro Histórico", "g": "G01", "e": 10, "t": "0991000000", "asistentes": 1}, {"id": "P-003", "f": "FAM-102", "n": "Sofía Andrade Caicedo", "s": "Sector 02 - La Esperanza", "g": "G02", "e": 8, "t": "0991000001", "asistentes": 1}, {"id": "P-004", "f": "FAM-102", "n": "Esteban Andrade Caicedo", "s": "Sector 02 - La Esperanza", "g": "G02", "e": 11, "t": "0991000001", "asistentes": 1}, {"id": "P-005", "f": "FAM-103", "n": "Camila Morales Ramos", "s": "Sector 03 - Las Lomas Altas", "g": "G03", "e": 9, "t": "0991000002", "asistentes": 1}, {"id": "P-006", "f": "FAM-103", "n": "Joaquín Morales Ramos", "s": "Sector 03 - Las Lomas Altas", "g": "G03", "e": 12, "t": "0991000002", "asistentes": 1}, {"id": "P-007", "f": "FAM-104", "n": "Valentina Castro Benítez", "s": "Sector 04 - El Mirador", "g": "G04", "e": 10, "t": "0991000003", "asistentes": 1}, {"id": "P-008", "f": "FAM-104", "n": "Alejandro Castro Benítez", "s": "Sector 04 - El Mirador", "g": "G04", "e": 13, "t": "0991000003", "asistentes": 1}, {"id": "P-009", "f": "FAM-105", "n": "Martina Caicedo Flores", "s": "Sector 05 - Bellavista", "g": "G05", "e": 11, "t": "0991000004", "asistentes": 1}, {"id": "P-010", "f": "FAM-105", "n": "Samuel Caicedo Flores", "s": "Sector 05 - Bellavista", "g": "G05", "e": 14, "t": "0991000004", "asistentes": 1}, {"id": "P-011", "f": "FAM-106", "n": "Emilia Ramos Delgado", "s": "Sector 06 - San Antonio", "g": "G06", "e": 12, "t": "0991000005", "asistentes": 1}, {"id": "P-012", "f": "FAM-106", "n": "Daniel Ramos Delgado", "s": "Sector 06 - San Antonio", "g": "G06", "e": 15, "t": "0991000005", "asistentes": 1}, {"id": "P-013", "f": "FAM-107", "n": "Paula Benítez Silva", "s": "Sector 07 - La Florida", "g": "G07", "e": 13, "t": "0991000006", "asistentes": 1}, {"id": "P-014", "f": "FAM-107", "n": "Nicolás Benítez Silva", "s": "Sector 07 - La Florida", "g": "G07", "e": 10, "t": "0991000006", "asistentes": 1}, {"id": "P-015", "f": "FAM-108", "n": "Isabella Flores Guayasamín", "s": "Sector 08 - Los Pinos", "g": "G08", "e": 14, "t": "0991000007", "asistentes": 1}, {"id": "P-016", "f": "FAM-108", "n": "Gabriel Flores Guayasamín", "s": "Sector 08 - Los Pinos", "g": "G08", "e": 11, "t": "0991000007", "asistentes": 1}, {"id": "P-017", "f": "FAM-109", "n": "Victoria Delgado Ortiz", "s": "Sector 09 - Santa Rosa", "g": "G09", "e": 7, "t": "0991000008", "asistentes": 1}, {"id": "P-018", "f": "FAM-109", "n": "Lucas Delgado Ortiz", "s": "Sector 09 - Santa Rosa", "g": "G09", "e": 12, "t": "0991000008", "asistentes": 1}, {"id": "P-019", "f": "FAM-110", "n": "Mariana Silva Salazar", "s": "Sector 10 - San Carlos", "g": "G10", "e": 8, "t": "0991000009", "asistentes": 1}, {"id": "P-020", "f": "FAM-110", "n": "Sebastián Silva Salazar", "s": "Sector 10 - San Carlos", "g": "G10", "e": 13, "t": "0991000009", "asistentes": 1}, {"id": "P-021", "f": "FAM-111", "n": "Mateo Guayasamín Vaca", "s": "Sector 11 - Vista Hermosa", "g": "G11", "e": 9, "t": "0991000010", "asistentes": 1}, {"id": "P-022", "f": "FAM-111", "n": "Lucía Guayasamín Vaca", "s": "Sector 11 - Vista Hermosa", "g": "G11", "e": 14, "t": "0991000010", "asistentes": 1}, {"id": "P-023", "f": "FAM-112", "n": "Sofía Ortiz Cárdenas", "s": "Sector 12 - Nueva Aurora", "g": "G12", "e": 10, "t": "0991000011", "asistentes": 1}, {"id": "P-024", "f": "FAM-112", "n": "Esteban Ortiz Cárdenas", "s": "Sector 12 - Nueva Aurora", "g": "G12", "e": 15, "t": "0991000011", "asistentes": 1}, {"id": "P-025", "f": "FAM-113", "n": "Camila Salazar Maldonado", "s": "Sector 13 - El Progreso", "g": "G13", "e": 11, "t": "0991000012", "asistentes": 1}, {"id": "P-026", "f": "FAM-113", "n": "Joaquín Salazar Maldonado", "s": "Sector 13 - El Progreso", "g": "G13", "e": 10, "t": "0991000012", "asistentes": 1}, {"id": "P-027", "f": "FAM-114", "n": "Valentina Vaca Grijalva", "s": "Sector 14 - Jardines del Sur", "g": "G14", "e": 12, "t": "0991000013", "asistentes": 1}, {"id": "P-028", "f": "FAM-114", "n": "Alejandro Vaca Grijalva", "s": "Sector 14 - Jardines del Sur", "g": "G14", "e": 11, "t": "0991000013", "asistentes": 1}, {"id": "P-029", "f": "FAM-115", "n": "Martina Cárdenas Montenegro", "s": "Sector 15 - San Francisco", "g": "G15", "e": 13, "t": "0991000014", "asistentes": 1}, {"id": "P-030", "f": "FAM-115", "n": "Samuel Cárdenas Montenegro", "s": "Sector 15 - San Francisco", "g": "G15", "e": 12, "t": "0991000014", "asistentes": 1}, {"id": "P-031", "f": "FAM-116", "n": "Emilia Maldonado Vinueza", "s": "Sector 16 - Solanda Norte", "g": "G16", "e": 14, "t": "0991000015", "asistentes": 1}, {"id": "P-032", "f": "FAM-116", "n": "Daniel Maldonado Vinueza", "s": "Sector 16 - Solanda Norte", "g": "G16", "e": 13, "t": "0991000015", "asistentes": 1}, {"id": "P-033", "f": "FAM-117", "n": "Paula Grijalva Paredes", "s": "Sector 17 - Balcón del Valle", "g": "G17", "e": 7, "t": "0991000016", "asistentes": 1}, {"id": "P-034", "f": "FAM-117", "n": "Nicolás Grijalva Paredes", "s": "Sector 17 - Balcón del Valle", "g": "G17", "e": 14, "t": "0991000016", "asistentes": 1}], "mingas": [{"fecha": "2026-12-05", "dia": "Sábado 05 Dic", "hora": "08:30 AM", "lugar": "Sector 02 - La Esperanza (Cancha Barrial)", "materiales": "Escobas comunitarias, fundas industriales, guantes de protección", "activo": true}, {"fecha": "2026-12-12", "dia": "Sábado 12 Dic", "hora": "09:00 AM", "lugar": "Sector 03 - Las Lomas Altas (Casa Barrial)", "materiales": "Herramientas de huerto urbano y pintura de señalética comunitaria", "activo": true}, {"fecha": "2026-12-19", "dia": "Sábado 19 Dic", "hora": "09:00 AM", "lugar": "Sede Territorial Central (Jornada MEAL Anual)", "materiales": "Kits de materiales educativos para líderes territoriales", "activo": true}], "asistencia_metrics": {"historial_global": [{"grupo": "G01", "fecha": "2026-11-21", "voluntario": "Valeria Gómez", "presentes": 18, "total": 20}, {"grupo": "G02", "fecha": "2026-11-21", "voluntario": "Valeria Gómez", "presentes": 19, "total": 20}, {"grupo": "G03", "fecha": "2026-11-21", "voluntario": "Valeria Gómez", "presentes": 17, "total": 20}, {"grupo": "G04", "fecha": "2026-11-21", "voluntario": "Carlos Mendoza", "presentes": 20, "total": 20}, {"grupo": "G05", "fecha": "2026-11-21", "voluntario": "Carlos Mendoza", "presentes": 19, "total": 20}]}};
+        
+        // Inicializar APP_DB de inmediato con MOCK_LOCAL_DB para cero pantallas vacías
+        if (!localStorage.getItem('APP_DB_CACHE')) {
+            localStorage.setItem('APP_DB_CACHE', JSON.stringify(MOCK_LOCAL_DB));
+        }
+        try {
+            APP_DB = JSON.parse(localStorage.getItem('APP_DB_CACHE')) || MOCK_LOCAL_DB;
+        } catch(e) {
+            APP_DB = MOCK_LOCAL_DB;
+        }
+        if (APP_DB.pps_config) PPS_MAP = APP_DB.pps_config;
+
+function syncDB(cb_opt) {
             updateSyncUI('SYNCING');
             var cb = 'cb_sync_' + Date.now();
             window[cb] = function (d) {
@@ -1862,7 +1875,12 @@
                     }
                     if (cb_opt) cb_opt(d);
                 } else {
-                    console.log('Error en Sincronización:', d.error);
+                    
+                console.log('Modo Offline/Demo activado: usando base local.');
+                APP_DB = JSON.parse(localStorage.getItem('APP_DB_CACHE')) || MOCK_LOCAL_DB;
+                updateSyncUI('SYNCED');
+                if (cb_opt) cb_opt(APP_DB);
+
                 }
             };
             var sc = document.createElement('script');
@@ -1962,7 +1980,7 @@
             botReset();
         }
 
-        function botReset() {
+                function botReset() {
             var msgs = document.getElementById('botMsgs');
             msgs.innerHTML = '<div class="chat-bbl bot">👋 ¡Hola de nuevo! ¿Qué necesitas hacer ahora?'
                 + '<div class="chat-options">'
@@ -2077,7 +2095,7 @@
                         + '3️⃣ <b>Link WA:</b> Envía a la familia el link del grupo de WhatsApp del nuevo horario (puedes buscarlo aquí en el menú de Links).'
                         + '<br><br>'
                         + '<i>¿Quieres que te lleve al buscador de niños para iniciar el cambio?</i>',
-                        false, true
+                        false, true,
                     );
                     var d = document.createElement('div');
                     d.className = 'chat-options';
@@ -2111,7 +2129,7 @@
                         + '<i>"Hola, le confirmo que el cambio de grupo para su niño/a ha sido registrado exitosamente. Favor unirse al grupo de WhatsApp de este nuevo horario aquí: ' + g.link + '"</i>'
                         + '<br><br>'
                         + '<b>👉 <a href="' + g.link + '" target="_blank" style="color:#10b981; font-weight:900;">Toca aquí para abrir invitación</a></b>',
-                        false, true
+                        false, true,
                     );
                 }
                 if (action.startsWith('wa_hard_')) {
@@ -2216,7 +2234,7 @@
             else if (type === 'vol_move_kid') inp.oninput = volMoveKidSearch;
             else if (type === 'vol_update_photo') inp.oninput = volUpdatePhotoSearch;
 
-            showView('v-vol-search', 'Buscador', 'Children International', true, showVolDashboard);
+            showView('v-vol-search', 'Buscador', 'Operaciones Territoriales & MEAL', true, showVolDashboard);
         }
 
         function volDoSearchQuery() {
@@ -2433,7 +2451,6 @@
                 } else alert("Error al actualizar la edad: " + (r.error || ""));
             });
         }
-
         var FAM_SEL = null;
         function famDoSearch(type) {
             const q = norm(document.getElementById('famSearchInp').value);
@@ -2865,7 +2882,6 @@
                 container.appendChild(card);
             });
         }
-
         function copyWaLink(link) {
             vibe('SUCCESS');
             navigator.clipboard.writeText(link).then(() => {
@@ -3133,7 +3149,7 @@
             vibe('CLICK');
             var g = ATT_STATE.grupo;
             ATT_STATE.mode = 'official';
-            var link = (APP_DB.pps_config && APP_DB.pps_config.LINK_OFICIAL) ? APP_DB.pps_config.LINK_OFICIAL : 'https://participation.children.org/';
+            var link = (APP_DB.pps_config && APP_DB.pps_config.LINK_OFICIAL) ? APP_DB.pps_config.LINK_OFICIAL : '#';
             
             // 1. Guardar Borrador (Resiliencia)
             localStorage.setItem('DRAFT_ATT', JSON.stringify(ATT_STATE));
@@ -3323,12 +3339,11 @@
                         </div>
                     </div>
                     <div class="summary-footer">
-                        Club Juan Montalvo · Children International
+                        TerritoryOps · Operaciones Territoriales & MEAL
                     </div>
                 </div>
             `;
         }
-
         function shareSummaryWhatsApp() {
             vibe('CLICK');
             var g = ATT_STATE.grupo;
@@ -3583,7 +3598,7 @@
             
             // Prioridad 1: Estado global | Prioridad 2: Título de la pantalla (Resiliencia total)
             var gNom = VOL_CHANGE.grupo || document.getElementById('hSub').textContent;
-            if (!gNom || gNom === "Children International") return;
+            if (!gNom || gNom === "Operaciones Territoriales & MEAL") return;
 
             var q = norm(inp.value);
             var base = APP_DB.participantes.filter(function (p) { return p.g === gNom; });
@@ -3743,7 +3758,6 @@
                 }
             });
         }
-
         // --- JUSTIFICACIONES VOLUNTARIOS ---
         function volShowJustification() {
             var grid = document.getElementById('volJustSusGrid');
@@ -3864,7 +3878,7 @@
                             triggerGamification("¡Listo! Foto de perfil guardada.");
                             USER.foto = res.fileUrl; 
                             var fileIdmatch = res.fileUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
-                            var pUrl = fileIdmatch ? 'https://drive.google.com/thumbnail?id=' + fileIdmatch[1] + '&sz=200' : res.fileUrl;
+                            var pUrl = fileIdmatch ? 'https://drive.google.com/thumbnail?id=' + fileIdmatch[1] + '&sz=w200' : res.fileUrl;
                             document.getElementById('volProfileImg').src = pUrl;
                         } else {
                             showToast("Error: " + res.error, true);
@@ -3988,7 +4002,7 @@
                         if (p.foto) {
                             var fileIdmatch = p.foto.match(/\/d\/([a-zA-Z0-9_-]+)/);
                             var parsedId = fileIdmatch ? fileIdmatch[1] : '';
-                            var pUrl = parsedId ? 'https://drive.google.com/thumbnail?id=' + parsedId + '&sz=w200' : p.foto;
+                            var pUrl = parsedId ? 'https://drive.google.com/thumbnail?id=' + parsedId + '&sz=200' : p.foto;
                             avatarHtml = '<img src="' + pUrl + '" onerror="this.onerror=null; this.src=\'data:image/svg+xml;utf8,<svg xmlns=\\\'http://www.w3.org/2000/svg\\\' viewBox=\\\'0 0 100 100\\\'><rect width=\\\'100%\\\' height=\\\'100%\\\' fill=\\\'%23cbd5e1\\\'/><text x=\\\'50\\\' y=\\\'50\\\' font-family=\\\'Arial\\\' font-size=\\\'40\\\' font-weight=\\\'bold\\\' fill=\\\'white\\\' dominant-baseline=\\\'central\\\' text-anchor=\\\'middle\\\'>' + p.n.charAt(0).toUpperCase() + '</text></svg>\';" style="width:50px; height:50px; border-radius:12px; object-fit:cover; flex-shrink:0;">';
                         } else {
                             avatarHtml = '<div style="width:50px; height:50px; border-radius:12px; background:var(--primary-soft); color:var(--primary); font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:20px;">' + p.n.charAt(0).toUpperCase() + '</div>';
@@ -4020,27 +4034,21 @@
         }
 
         // --- CORE API (JSONP) ---
+        
         function callAPI(params, cb) {
-            var q = new URLSearchParams(params).toString();
-            var fn = 'cb_' + Date.now() + '_' + Math.floor(Math.random() * 9999);
-            window[fn] = function (d) {
-                try { delete window[fn]; } catch (e) { }
-                if (cb) cb(d);
-            };
-            var s = document.createElement('script');
-            s.onerror = function () {
-                try { delete window[fn]; } catch (e) { }
-                if (cb) cb({ ok: false, error: 'Error de red o script' });
-            };
-            s.src = SCRIPT_URL + '?' + q + '&callback=' + fn;
-            document.body.appendChild(s);
-            // Timeout fallback 10 segundos
-            setTimeout(function () {
-                if (window[fn]) {
-                    delete window[fn];
-                    if (cb) cb({ ok: false, error: 'Tiempo de espera agotado' });
+            // Emulador de Backend Offline / Demo para GitHub Pages
+            setTimeout(function() {
+                try {
+                    let d = { ok: true, mensaje: 'Acción guardada correctamente en el sistema' };
+                    // Guardar en log local
+                    let localLogs = JSON.parse(localStorage.getItem('LOCAL_ACTIONS_LOG') || '[]');
+                    localLogs.unshift({ fecha: new Date().toISOString(), params: params });
+                    localStorage.setItem('LOCAL_ACTIONS_LOG', JSON.stringify(localLogs.slice(0, 50)));
+                    if (cb) cb(d);
+                } catch(err) {
+                    if (cb) cb({ ok: true, mensaje: 'Procesado exitosamente' });
                 }
-            }, 10000);
+            }, 300);
         }
 
         // --- LOADER ---
